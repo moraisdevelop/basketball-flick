@@ -18683,7 +18683,7 @@ onAdFinished = function() {};
 
 function initAds() {
     if (ADS_ENABLED && "undefined" !== typeof aiptag) {
-        var a = "segadroid",
+        var a = "moraisapps",
             b = getJsonFromUrl();
         b.hasOwnProperty("partner_id") && (a = b.partner_id);
         LOG("partner_id = " + a);
