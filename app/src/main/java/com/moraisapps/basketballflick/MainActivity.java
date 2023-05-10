@@ -1,8 +1,5 @@
 package com.moraisapps.basketballflick;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
@@ -20,6 +17,9 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.anjlab.android.iab.v3.BillingProcessor;
 import com.anjlab.android.iab.v3.TransactionDetails;
 import com.google.android.gms.ads.AdError;
@@ -33,7 +33,6 @@ import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
-import com.moraisapps.basketballflick.R;
 
 
 public class MainActivity extends AppCompatActivity implements BillingProcessor.IBillingHandler {
@@ -126,18 +125,14 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
         AdRequest adRequest = new AdRequest.Builder().build();
         InterstitialAd.load(
                 this,
-                "ca-app-pub-3940256099942544/1033173712",
+                "ca-app-pub-2422195987273377/3061387735",
                 adRequest,
-                new InterstitialAdLoadCallback()
-                {
+                new InterstitialAdLoadCallback() {
                     @Override
-                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd)
-                    {
+                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
 
                         MainActivity.this.mInterstitialAd = interstitialAd;
-
-                        interstitialAd.setFullScreenContentCallback(new FullScreenContentCallback()
-                        {
+                        interstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
                             @Override
                             public void onAdDismissedFullScreenContent()
                             {
